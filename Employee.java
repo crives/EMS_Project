@@ -5,13 +5,13 @@ public class Employee {
 	private int employeeId; 
 	protected String name;
 	private String location;
-	private String department;
+	private Departments department;
 	
 	public Employee() {
 		
 	}
 	
-	public Employee(int employeeId, String name, String location, String department) {
+	public Employee(int employeeId, String name, String location, Departments department) {
 		this.employeeId = employeeId; 
 		this.name = name;
 		this.location = location;
@@ -42,11 +42,11 @@ public class Employee {
 		this.location = location;
 	}
 
-	public String getDepartment() {
+	public Departments getDepartment() {
 		return department;
 	}
 
-	public void setDepartment(String department) {
+	public void setDepartment(Departments department) {
 		this.department = department;
 	}
 

@@ -6,7 +6,8 @@ public class Manager extends Employee {
 		super();
 		this.name = name;
 	}
-	public Manager(int employeeId, String name, String location, String department) {
+	
+	public Manager(int employeeId, String name, String location, Departments department) {
 		super(employeeId, name, location, department);
 			
 		}
