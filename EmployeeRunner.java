@@ -3,12 +3,24 @@ package ems_project;
 import java.util.ArrayList;
 import java.util.List;
 
+
+// TO-DO: 
+// Fix 'list all employee information'
+// Remove and Update department and employee information
+// Know which employees are in which departments (departments.getEmpList - which we might already have)
+// Create JUnit Testing
+// Create one custom exception
+// Make a comment of where inheritance and composition happens
+
+
 public class EmployeeRunner {
 
 	public static void main(String[] args) {
 		
 		Departments humanResources = new Departments("Human Resources");
 		Manager manager = new Manager("Monica");
+		
+		// !!!!! FIX THROUGH EMPLOYEE !!! //
 		Employee Tom = new Employee(123456, "Tom", "New York", humanResources); 
 		
 		humanResources.setDeptManager(manager);
@@ -52,7 +64,7 @@ public class EmployeeRunner {
 		System.out.println(deptList);
 		
 		// Remove Departments
-		
+//		empList.remove(index)
 		// Update Departments
 		
 		
