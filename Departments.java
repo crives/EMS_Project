@@ -9,6 +9,17 @@ public class Departments {
 	
 	private List<Employee> employeeList = new ArrayList<Employee>();
 	
+	public Departments(String departmentName, Manager deptManager) {
+		this.departmentName = departmentName;
+		this.deptManager = deptManager;
+	}
+	
+	public Departments(String departmentName, Manager deptManager, List<Employee> employeeList) {
+		this.departmentName = departmentName;
+		this.deptManager = deptManager;
+		this.employeeList = employeeList;
+	}
+
 	public String getDepartmentName() {
 		return departmentName;
 	}
@@ -29,12 +40,9 @@ public class Departments {
 		return employeeList;
 	}
 	
-	public void setEmployeeList(List<Employee> employeeList) {
-		this.employeeList = employeeList;
+	public void setEmployeeList(Employee emp) {
+		employeeList.add(emp);
 	}
 	
-	
-	
-
 	
 }
