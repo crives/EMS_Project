@@ -37,6 +37,10 @@ public class Departments {
 	}
 	
 	public List<Employee> getEmployeeList() {
+//		System.out.println(this.departmentName);
+		for (Employee emp : employeeList) {
+			System.out.println(emp.getName());
+		}
 		return employeeList;
 	}
 	

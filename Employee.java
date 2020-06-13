@@ -1,6 +1,5 @@
 package ems_project;
 
-
 public class Employee {
 	
 	private int employeeId; 
