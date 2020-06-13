@@ -3,10 +3,13 @@ package ems_project;
 public class Employee {
 	
 	private int employeeId; 
-	private String name;
+	protected String name;
 	private String location;
 	private String department;
 	
+	public Employee() {
+		
+	}
 	
 	public Employee(int employeeId, String name, String location, String department) {
 		this.employeeId = employeeId; 
