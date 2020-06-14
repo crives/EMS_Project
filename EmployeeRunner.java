@@ -10,7 +10,6 @@ import java.util.List;
 // Know which employees are in which departments (departments.getEmpList - which we might already have)
 // Create JUnit Testing
 // Create one custom exception
-// Make a comment of where inheritance and composition happens
 
 
 public class EmployeeRunner {
@@ -39,7 +38,6 @@ public class EmployeeRunner {
 		// Remove Employee Information
 		
 		// Update Employee Information
-		
 		
 		
 		// List Employee List
