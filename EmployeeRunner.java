@@ -2,7 +2,8 @@ package ems_project;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 // TO-DO: 
 // Fix 'list all employee information'
@@ -23,7 +24,7 @@ public class EmployeeRunner {
 		// !!!!! FIX THROUGH EMPLOYEE !!! //
 		Employee Tom = new Employee(123456, "Tom", "New York", humanResources); 
 		
-		humanResources.setDeptManager(manager);
+		humanResources.setDepartmentManager(manager);
 //		System.out.println(humanResources.getDeptManager());
 		
 		
@@ -33,23 +34,26 @@ public class EmployeeRunner {
 		List<Employee> empList = new ArrayList<Employee>();
 		
 		// Add Employees
-		empList.add(manager);
-		empList.add(Tom);
-		
-		// Remove Employee Information
-		
-		// Update Employee Information
-		
-		
-		
-		// List Employee List
-		System.out.println(empList);
+		empList.add(manager); // Monica - Manager
+		empList.add(Tom); // Tom - Regular Employee
 		
 		// List Employee Names
 		for (Employee e : empList) {
 			System.out.println(e.getName());
 		}
-
+		
+		// Remove Employee Information
+		empList.remove(Tom);
+		
+		// List Employee Names - No more Tom
+		for (Employee e : empList) {
+			System.out.println(e.getName());
+		}
+		
+		// Update Employee Information
+		manager.setName("MoniMoniMoni");
+		// Show change
+		System.out.println(manager.getName());
 		
 		//// Know all Departments in the Company and which employees are in them
 		// Add, Remove, Update, and List Departments ////
@@ -61,17 +65,34 @@ public class EmployeeRunner {
 		deptList.add(humanResources);
 		
 		// List Departments
-		System.out.println(deptList);
+		//System.out.println(deptList);
+		for (Departments d : deptList) {
+			System.out.println(d.getDepartmentName());
+		}
 		
 		// Remove Departments
 //		empList.remove(index)
 		// Update Departments
 		
 		
+		// error handling - creating an employee
+		Scanner sc = new Scanner(System.in);
 		
-		
-		
+		while(true) {
+			System.out.println("Enter new Employee's name: ");
+			try {
+				String newName = sc.nextLine();
+				Employee newEmp = new Employee(newName);
+				System.out.println("Employee " + newName + " has been created.");
+				empList.add(newEmp);
+				break;
+			} catch (InputMismatchException e) {
+				sc.hasNextLine();
+				System.out.println("Please enter a valid name.");
+			}	
+		}
 
+		sc.close();
 	}
 
 }

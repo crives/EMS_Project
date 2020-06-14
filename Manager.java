@@ -1,5 +1,6 @@
 package ems_project;
 
+// Manager inherits from Employee
 public class Manager extends Employee {
 	
 	public Manager(String name) {
