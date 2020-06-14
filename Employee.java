@@ -51,7 +51,9 @@ public class Employee {
 
 	// A second option for printing out an Employee's Department
 	public String getDepartmentString() {
-		return this.department.getDepartmentName();
+//		this.department = department;
+		return department.getDepartmentName();
+//		return this.department.getDepartmentName();
 	}
 
 	public void setDepartment(Departments department) {

@@ -1,9 +1,9 @@
 package EMS_Project;
 
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 // TO-DO: 
 // Fix 'list all employee information'
@@ -47,6 +47,7 @@ public class EmployeeRunner {
 		// List Employee Names - No more Tom
 		for (Employee e : empList) {
 			System.out.println(e.getName());
+//			System.out.println(e.getDepartmentString());
 		}
 
 		// Update Employee Information
@@ -70,26 +71,51 @@ public class EmployeeRunner {
 		}
 
 		// Remove Departments
-//		empList.remove(index)
+		deptList.remove(humanResources);
+		System.out.println(deptList);
+		
 		// Update Departments
+		humanResources.setDepartmentName("Analytics");
+		System.out.println(humanResources.getDepartmentName());
+		
 
-		// error handling - creating an employee
-		Scanner sc = new Scanner(System.in);
-
-		while (true) {
+		// error handling - creating an employee			
+			Scanner sc = new Scanner(System.in);
 			System.out.println("Enter new Employee's name: ");
-			try {
-				String newName = sc.nextLine();
-				Employee newEmp = new Employee(newName);
-				System.out.println("Employee " + newName + " has been created.");
-				empList.add(newEmp);
-				break;
-			} catch (InputMismatchException e) {
-				sc.hasNextLine();
+			String newName = sc.nextLine();	
+			while (!isStringOnlyAlphabet(newName)) {	
 				System.out.println("Please enter a valid name.");
+				newName = sc.nextLine();
 			}
-		}
+			Employee newEmp = new Employee(newName);
+			empList.add(newEmp);
+			System.out.println("Employee " + newName + " has been created.");
 		sc.close();
+
+			}
+
+	
+	public static boolean isStringOnlyAlphabet(String str) {
+		return ((!str.equals("")) && (str != null) && (str.matches("^[a-zA-Z]*$")));
+}
 	}
 
-}
+//Scanner sc = new Scanner(System.in);
+//System.out.println("Enter new Employee's name: ");
+//String newName = sc.nextLine();	
+//while (!isStringOnlyAlphabet(newName)) {	
+//	System.out.println("Please enter a valid name.");
+//	newName = sc.nextLine();
+//}
+//Employee newEmp = new Employee(newName);
+//empList.add(newEmp);
+//System.out.println("Employee " + newName + " has been created.");
+//sc.close();
+//
+//}
+//
+//
+//public static boolean isStringOnlyAlphabet(String str) {
+//return ((!str.equals("")) && (str != null) && (str.matches("^[a-zA-Z]*$")));
+//}
+//				

@@ -34,7 +34,7 @@ public class Departments {
 		this.departmentName = departmentName;
 	}
 
-	public Manager getDepartmenttManager() {
+	public Manager getDepartmentManager() {
 		return deptManager;
 	}
 
