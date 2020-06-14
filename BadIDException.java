@@ -1,4 +1,4 @@
-package ems_project;
+package EMS_Project;
 
 public class BadIDException extends Exception {
 
