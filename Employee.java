@@ -7,8 +7,10 @@ public class Employee {
 	private String location;
 	private Departments department;
 	
-	public Employee() {
-		
+	public Employee() {}
+	
+	public Employee(String name) {
+		this.name = name;
 	}
 	
 	public Employee(int employeeId, String name, String location, Departments department) {
@@ -22,7 +24,7 @@ public class Employee {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(int employeeId) throws BadIDException {
 		this.employeeId = employeeId;
 	}
 
@@ -43,9 +45,14 @@ public class Employee {
 	}
 
 	public Departments getDepartment() {
-		return department;
+		return this.department;
 	}
 
+	// A second option for printing out an Employee's Department 
+	public String getDepartmentString() {
+		return this.department.getDepartmentName();
+	}
+	
 	public void setDepartment(Departments department) {
 		this.department = department;
 	}

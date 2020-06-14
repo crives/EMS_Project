@@ -5,6 +5,7 @@ import java.util.List;
 public class Departments {
 	
 	private String departmentName;
+	// Department 'HAS-A' Manager
 	private Manager deptManager;
 	
 	private List<Employee> employeeList = new ArrayList<Employee>();
@@ -32,14 +33,15 @@ public class Departments {
 		this.departmentName = departmentName;
 	}
 	
-	public Manager getDeptManager() {
+	public Manager getDepartmenttManager() {
 		return deptManager;
 	}
 	
-	public void setDeptManager(Manager deptManager) {
+	public void setDepartmentManager(Manager deptManager) {
 		this.deptManager = deptManager;
 	}
 	
+	// Prints out employeeList and returns the List itself
 	public List<Employee> getEmployeeList() {
 //		System.out.println(this.departmentName);
 		for (Employee emp : employeeList) {
