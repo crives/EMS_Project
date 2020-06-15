@@ -14,6 +14,7 @@ import java.util.InputMismatchException;
 
 public class EmployeeRunner {
 
+	
 	public static void main(String[] args) {
 
 		Departments humanResources = new Departments("Human Resources");
@@ -80,42 +81,39 @@ public class EmployeeRunner {
 		
 
 		// error handling - creating an employee			
-			Scanner sc = new Scanner(System.in);
-			System.out.println("Enter new Employee's name: ");
-			String newName = sc.nextLine();	
-			while (!isStringOnlyAlphabet(newName)) {	
-				System.out.println("Please enter a valid name.");
-				newName = sc.nextLine();
-			}
-			Employee newEmp = new Employee(newName);
-			empList.add(newEmp);
-			System.out.println("Employee " + newName + " has been created.");
-		sc.close();
 
-			}
-
+		Scanner sc = new Scanner(System.in);
 	
-	public static boolean isStringOnlyAlphabet(String str) {
-		return ((!str.equals("")) && (str != null) && (str.matches("^[a-zA-Z]*$")));
-}
+		boolean charString = false;
+		
+		System.out.println("Enter new Employee's name: ");
+
+		while(!charString) {
+				
+			try {
+				String newName = sc.nextLine();		
+				if (isStringOnlyAlphabet(newName)) {	
+					Employee newEmp = new Employee(newName);
+					empList.add(newEmp);
+					System.out.println("Employee " + newName + " has been created.");
+					charString = true;
+					
+				} else {
+//					System.out.println("Please enter a valid name.");
+					throw new BadNameException();
+				}
+			} catch(BadNameException e) {
+//				e.getMessage();	
+			}
+		}
 	}
 
-//Scanner sc = new Scanner(System.in);
-//System.out.println("Enter new Employee's name: ");
-//String newName = sc.nextLine();	
-//while (!isStringOnlyAlphabet(newName)) {	
-//	System.out.println("Please enter a valid name.");
-//	newName = sc.nextLine();
-//}
-//Employee newEmp = new Employee(newName);
-//empList.add(newEmp);
-//System.out.println("Employee " + newName + " has been created.");
-//sc.close();
-//
-//}
-//
-//
-//public static boolean isStringOnlyAlphabet(String str) {
-//return ((!str.equals("")) && (str != null) && (str.matches("^[a-zA-Z]*$")));
-//}
-//				
+			
+		public static boolean isStringOnlyAlphabet(String str) {
+			return ((!str.equals("")) && (str != null) && (str.matches("^[a-zA-Z]*$")));
+		}
+					
+
+}
+				
+		
