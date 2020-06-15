@@ -5,12 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.InputMismatchException;
 
-// TO-DO: 
-// Fix 'list all employee information'
-// Remove and Update department and employee information
-// Know which employees are in which departments (departments.getEmpList - which we might already have)
-// Create JUnit Testing
-// Create one custom exception
 
 public class EmployeeRunner {
 
