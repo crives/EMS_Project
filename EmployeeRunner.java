@@ -93,11 +93,9 @@ public class EmployeeRunner {
 					charString = true;
 					
 				} else {
-//					System.out.println("Please enter a valid name.");
 					throw new BadNameException();
 				}
 			} catch(BadNameException e) {
-//				e.getMessage();	
 			}
 		}
 	}
