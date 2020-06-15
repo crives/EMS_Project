@@ -25,7 +25,7 @@ public class Employee {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) throws BadIDException {
+	public void setEmployeeId(int employeeId) {
 		this.employeeId = employeeId;
 	}
 
